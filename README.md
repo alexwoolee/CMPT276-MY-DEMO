@@ -12,6 +12,7 @@ You are working on a project cloned from `GitHub`. You just made a small text ed
 Tally Counter:
 1
 2
+3
 
 <img src="images/bocchi.jpg" width="600px" alt="bocchi band">
 
