@@ -13,6 +13,9 @@ Tally Counter:
 1
 2
 3
+rebase 4
+rebase 5
+rebase 6
 
 <img src="images/bocchi.jpg" width="600px" alt="bocchi band">
 
