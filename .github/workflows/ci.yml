@@ -14,27 +14,30 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
+jobs: # what are some jobs we run to the server
   # This workflow contains a single job called "build"
-  build:
+  build: # we want this build to run on the ubuntu-latest version 
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+    steps: # steps for us to actually run the build
       # Checkout HEAD^
+      - name: Checkout code
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-      - run: git checkout HEAD^
-
       # Sets up node to run for action 
-      - uses: actions/checkout@v4
+      - name: Set up Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm test
+
+      - name: Install dependencies 
+      - run: npm install # all we're doing is running npm install command
+
+      - name: Run tests 
+        env: 
+          API_KEY: #{{ secrets.MY_API_KEY }} 
+          # Name/Value is pulled from Github > Settings > Secrets 
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
