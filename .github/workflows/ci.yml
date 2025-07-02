@@ -37,7 +37,7 @@ jobs: # what are some jobs we run to the server
       - name: Run tests 
         env: 
           API_KEY: #{{ secrets.MY_API_KEY }} 
-          # Name/Value is pulled from Github > Settings > Secrets 
+          # Name/Value is pulled from Github > Settings > Secrets > Actions
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
